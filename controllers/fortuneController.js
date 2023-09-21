@@ -21,4 +21,4 @@ const FortuneController = {
 
 }
 
-module.exports = UserController;
+module.exports = FortuneController;
