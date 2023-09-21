@@ -15,11 +15,11 @@ const UserController = {
         }
         catch (error) {
             console.log('error in user creation: ' + error)
-            return next({error : 'error in user creation'})
+            return next({ error: 'error in user creation' })
         }
 
-    
-}
+
+    }
 
 }
 
