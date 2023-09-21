@@ -10,7 +10,7 @@ const UserController = {
                 password: request.body.password,
                 id: 1
             })
-            const newUser = await newUser.save();
+            const savedUser = await newUser.save();
             response.status(200).json(savedUser);
         }
         catch (error) {

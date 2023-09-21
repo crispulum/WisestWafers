@@ -6,26 +6,17 @@ const mongoose = require('mongoose');
 // An "age" that is a number
 // All of these should be required.
 // Create your schema here
-const userSchema = new mongoose.Schema({
+const fortuneSchema = new mongoose.Schema({
     
  
-  username: {
+  fortuneText: {
     type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  seenFortunes: {
-    type: String,
-    default: []
+    required: true, 
   }
 });
 
-const user = mongoose.model('user', userSchema);
+const fortune = mongoose.model('fortune', fortuneSchema);
 
 // You must export your model through module.exports
 // The collection name should be 'student'
-module.exports = user;
+module.exports = fortune;

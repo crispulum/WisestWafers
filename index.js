@@ -37,9 +37,14 @@ db.on('disconnected', () => {
 //         console.error('Error saving user:', error);
 //     });
 
-//     User.findOne({username:'example_user1'})
-//     .then (foundUser => {
-//         if (foundUser) console.log(foundUser)
-//         else console.log('user not found')
+User.findOne({ username: 'example_user' })
+    .then(foundUser => {
+        if (foundUser) console.log(foundUser)
+        else console.log('user not found')
 
-//     })
+    })
+
+User.deleteMany({})
+    .then(result => {
+        console.log('deleted: ' + result)
+    })
