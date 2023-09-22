@@ -20,20 +20,13 @@ h1 {
 
 .center {
     margin: 50px auto;
-    width: 200px;
+    width: 300px;
 }
 
 .form {
     text-align: center;
 }
 
-.ponder {
-    font-size: 14px;
-    border-radius: 10px;
-    background-color: #564E7E;
-    border: 1px solid #302238;
-    width: 100px;
-}
 
 .field {
     background-color: #7D76B3;
@@ -41,9 +34,20 @@ h1 {
     border: none;
     border-bottom: 2px solid #564E7E;
     font-size: 18px;
+    text-align:center;
+    caret-color:transparent;
+    
     /* border-radius: 10px; */
 }
 ::placeholder {
     text-align: center;
     font-style: italic
+}
+
+.sparkle {
+    width: 35px;
+    height: 35px;
+    
+    position:relative;
+    top:10px;
 }
