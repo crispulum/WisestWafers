@@ -35,6 +35,7 @@ db.on('disconnected', () => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('client'))
 
 const fortuneRouter = express.Router();
 app.use('/', fortuneRouter);
@@ -45,12 +46,14 @@ app.get('/', (req, res) => {
 })
 
 
+app.post('/', (request, respose) => {
+    res.status(200)
+})
 
 
 
 
-
-app.listen(PORT, ()=>{ console.log(`Listening on port ${PORT}...`); });
+app.listen(PORT, () => { console.log(`Listening on port ${PORT}...`); });
 
 
 
