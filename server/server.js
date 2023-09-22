@@ -35,19 +35,24 @@ db.on('disconnected', () => {
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('client'))
+// app.use(express.static(path.join(__dirname, 'build')));
+// app.use('/static', express.static(path.join(__dirname, '..', 'build')));
+
+app.use(express.static(path.join(__dirname, '..', 'build')));
+
 
 const fortuneRouter = express.Router();
 app.use('/', fortuneRouter);
 
 
 app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/index.html'))
+    res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'))
 })
 
 
 app.post('/', (request, respose) => {
-    res.status(200)
+    console.log('success!')
+    res.status(200).send('congration!')
 })
 
 
