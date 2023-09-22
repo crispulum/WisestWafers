@@ -3,10 +3,10 @@ body {
 }
 
 h1 {
-    font-size: 32;
+    font-size: 48;
     font-weight: bold;
     text-align: center;
-    padding-top: 15%;
+    padding-top: 10%;
     color: #302238;
 }
 
@@ -27,7 +27,14 @@ h1 {
     text-align: center;
 }
 
-
+.info {
+    display: block;
+    margin-right: 50px;
+    margin-left: auto;
+    height: 50px;
+    width: 50px;
+    margin-top: 100px;
+}
 .field {
     background-color: #7D76B3;
     /* border: 1px solid #564E7E; */
