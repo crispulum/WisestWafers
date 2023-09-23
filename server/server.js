@@ -46,15 +46,20 @@ app.use('/', fortuneRouter);
 
 
 app.get('/', (req, res) => {
+   console.log('test')
     res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'))
 })
 
 
-app.post('/', (request, respose) => {
-    console.log('success!')
-    res.status(200).send('congration!')
+app.post('/fortuneText', (request, response) => {
+    try {
+        console.log('success!')
+        response.status(200).send('congratulations!')
+    } catch (error) {
+        console.error('Error handling POST request:', error);
+        response.status(500).send('Internal Server Error');
+    }
 })
-
 
 
 

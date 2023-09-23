@@ -37,7 +37,7 @@ module.exports = {
     }), new CleanWebpackPlugin(), new MiniCssExtractPlugin(),],
     devServer: {
       static: {
-        publicPath: '/build',
+        publicPath: '/',
         directory: path.resolve(__dirname, 'build'),
       },
       port: 8080,
