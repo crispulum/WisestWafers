@@ -23,8 +23,9 @@
   "scripts": {
     "start": "webpack serve --config webpack.config.js --open",
     "build": "webpack --config webpack.config.js",
-    "dev-server": "nodemon ./server.js localhost 8080",
-   "dev-client": "webpack-dev-server --port 3000"
+    "dev-server": "nodemon ./server/server.js localhost 8080",
+   "dev-client": "webpack-dev-server --port 3000 --mode development",
+   "both" : "nodemon ./server/server.js localhost 8080 & webpack-dev-server --port 3000"
   },
   "keywords": [],
   "author": "",
