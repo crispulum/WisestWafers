@@ -54,8 +54,9 @@ h1 {
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
 }
-.info:hover + .hidden{
-    display:block;
+
+.info:hover+.hidden {
+    display: block;
     visibility: visible;
     opacity: 0.5;
     transition: opacity 3s;
@@ -69,11 +70,12 @@ h1 {
     border: none;
     border-bottom: 2px solid #564E7E;
     font-size: 18px;
-    text-align:center;
-    caret-color:transparent;
-    
+    text-align: center;
+    caret-color: transparent;
+
     /* border-radius: 10px; */
 }
+
 ::placeholder {
     text-align: center;
     font-style: italic
@@ -82,7 +84,54 @@ h1 {
 .sparkle {
     width: 35px;
     height: 35px;
-    
-    position:relative;
-    top:10px;
+
+    position: relative;
+    top: 10px;
+}
+
+.glitter-image {}
+
+@keyframes glitter {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+.glittering {
+    animation: glitter 0.5s 3;
+}
+
+.color-changing-image {
+    transition: background-color 0.5s, border-color 0.5s;
+}
+
+.color-original {
+    background-color: #7D76B3;
+}
+
+.color-darker-1 {
+    background-color: #5A4D99;
+    /* Darker blue */
+}
+
+.color-brighter-1 {
+    background-color: #8BA5E5;
+    /* Brighter blue */
+}
+
+.color-brighter-2 {
+    background-color: #9FC1F7;
+    /* Even brighter blue */
+}
+
+.color-darker-2 {
+    background-color: #475279;
+    /* Darker blue */
 }

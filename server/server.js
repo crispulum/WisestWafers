@@ -10,6 +10,7 @@ const app = express();
 //custom packages
 const User = require('./controllers/userController.js');
 const fortuneController = require('./controllers/fortuneController.js');
+const apiRouter = require('./routes/fortuneApi.js')
 
 
 const PORT = 3000;
@@ -46,23 +47,37 @@ app.use('/', fortuneRouter);
 
 
 app.get('/', (req, res) => {
-   console.log('test')
+    console.log('test')
     res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'))
 })
 
 
-app.post('/fortuneText', (request, response) => {
-    try {
-        console.log('success!')
-        response.status(200).send('congratulations!')
-    } catch (error) {
-        console.error('Error handling POST request:', error);
-        response.status(500).send('Internal Server Error');
-    }
+// app.post('/fortuneText', (request, response) => {
+//     try {
+//         console.log('success!')
+//         response.status(200).send('congratulations!')
+//     } catch (error) {
+//         console.error('Error handling POST request:', error);
+//         response.status(500).send('Internal Server Error');
+//     }
+// })
+
+app.use('/', apiRouter)
+
+
+app.use((req, res) => res.status(404).send('you have strayed from the path of the orb'));
+
+
+app.use((err, req, res, next) => {
+    const defaultErr = {
+        log: 'Express error handler caught unknown middleware error',
+        status: 500,
+        message: { err: 'An error occurred' },
+    };
+    const errorObj = Object.assign({}, defaultErr, err);
+    console.log(errorObj.log);
+    return res.status(errorObj.status).json(errorObj.message);
 })
-
-
-
 app.listen(PORT, () => { console.log(`Listening on port ${PORT}...`); });
 
 

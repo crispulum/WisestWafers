@@ -12,6 +12,18 @@ const fortuneSchema = new mongoose.Schema({
   fortuneText: {
     type: String,
     required: true, 
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  createdByIP: {
+    type: String,
+    required: true,
+  },
+  score: {
+    type: Number,
+    default: 1,
   }
 });
 
